@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy · GeoLink</title>
+<meta name="description" content="Privacy Policy for GeoLink — a social media platform.">
+<style>
+  :root {
+    --gl-navy: #0A0A12;
+    --gl-blue: #3B82F6;
+    --gl-teal: #EC4899;
+    --gl-teal-light: #F472B6;
+    --gl-amber: #A855F7;
+    --gl-bg: #FAFAFC;
+    --gl-surface: #FFFFFF;
+    --gl-border: #ECECF1;
+    --gl-text: #16161D;
+    --gl-text-soft: #55555F;
+    --gl-text-faint: #8A8A96;
+    --gl-link: #C026D3;
+    --gl-code-bg: #F6F1F8;
+    --gl-shadow: 0 1px 2px rgba(20,10,30,0.04), 0 8px 24px rgba(20,10,30,0.06);
+    --gl-radius: 14px;
+    --gl-maxw: 1180px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --gl-navy: #06060A;
+      --gl-blue: #60A5FA;
+      --gl-teal: #F472B6;
+      --gl-teal-light: #F9A8D4;
+      --gl-amber: #C084FC;
+      --gl-bg: #0A0A0F;
+      --gl-surface: #121218;
+      --gl-border: #26262F;
+      --gl-text: #F5F5F7;
+      --gl-text-soft: #B9B9C4;
+      --gl-text-faint: #86868F;
+      --gl-link: #F472B6;
+      --gl-code-bg: #1A1A22;
+      --gl-shadow: 0 1px 2px rgba(0,0,0,0.35), 0 8px 28px rgba(0,0,0,0.4);
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--gl-bg);
+    color: var(--gl-text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  a { color: var(--gl-link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a:focus-visible, button:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--gl-teal);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* ---------- Hero / Masthead ---------- */
+  .masthead {
+    position: relative;
+    background:
+      radial-gradient(1100px 480px at 10% -10%, rgba(236,72,153,0.30), transparent 60%),
+      radial-gradient(900px 420px at 95% 0%, rgba(59,130,246,0.35), transparent 55%),
+      radial-gradient(700px 360px at 55% 40%, rgba(168,85,247,0.16), transparent 60%),
+      linear-gradient(160deg, var(--gl-navy) 0%, #0D0D14 100%);
+    color: #F5F5F7;
+    padding: 64px 24px 96px;
+    overflow: hidden;
+  }
+
+  .pin-field {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  .masthead-inner {
+    max-width: var(--gl-maxw);
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .brand-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  .brand-mark-slot {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+  }
+
+  .brand-mark {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    object-fit: contain;
+    display: block;
+  }
+
+  #logoFallback {
+    display: none;
+    position: absolute;
+    inset: 0;
+  }
+
+  .brand-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--gl-teal-light);
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gl-teal-light);
+    box-shadow: 0 0 0 4px rgba(79,209,203,0.18);
+  }
+
+  h1.doc-title {
+    font-size: clamp(2.1rem, 5vw, 3.2rem);
+    line-height: 1.08;
+    margin: 0 0 18px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    max-width: 20ch;
+  }
+
+  .doc-sub {
+    font-size: 1.05rem;
+    color: #C7C7D6;
+    max-width: 62ch;
+    margin: 0 0 28px;
+  }
+
+  .meta-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .chip {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.16);
+    backdrop-filter: blur(6px);
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    color: #E2EEF7;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .chip svg { width: 14px; height: 14px; opacity: 0.9; }
+
+  /* ---------- Layout ---------- */
+  .layout {
+    max-width: var(--gl-maxw);
+    margin: -56px auto 0;
+    padding: 0 24px 80px;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 32px;
+    position: relative;
+  }
+
+  .toc-card {
+    background: var(--gl-surface);
+    border: 1px solid var(--gl-border);
+    border-radius: var(--gl-radius);
+    box-shadow: var(--gl-shadow);
+    padding: 22px;
+    align-self: start;
+    position: sticky;
+    top: 20px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+  }
+
+  .toc-card h2 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--gl-text-faint);
+    margin: 0 0 14px;
+    font-weight: 700;
+  }
+
+  .toc-card ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: toc;
+  }
+
+  .toc-card li {
+    counter-increment: toc;
+    margin-bottom: 2px;
+  }
+
+  .toc-card a {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    padding: 7px 8px;
+    border-radius: 8px;
+    color: var(--gl-text-soft);
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+
+  .toc-card a:hover {
+    background: var(--gl-code-bg);
+    text-decoration: none;
+    color: var(--gl-text);
+  }
+
+  .toc-card a::before {
+    content: counter(toc, decimal-leading-zero);
+    font-variant-numeric: tabular-nums;
+    color: var(--gl-teal);
+    font-weight: 700;
+    font-size: 0.78rem;
+    flex-shrink: 0;
+  }
+
+  .doc {
+    background: var(--gl-surface);
+    border: 1px solid var(--gl-border);
+    border-radius: var(--gl-radius);
+    box-shadow: var(--gl-shadow);
+    padding: 8px 44px 44px;
+  }
+
+  .intro-block {
+    padding: 32px 0 8px;
+    border-bottom: 1px solid var(--gl-border);
+    margin-bottom: 8px;
+    color: var(--gl-text-soft);
+  }
+
+  .intro-block p { margin: 0 0 14px; }
+
+  section.clause {
+    padding: 34px 0;
+    border-bottom: 1px solid var(--gl-border);
+    scroll-margin-top: 24px;
+  }
+
+  section.clause:last-of-type { border-bottom: none; padding-bottom: 4px; }
+
+  .clause-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    height: 30px;
+    padding: 0 8px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--gl-teal), var(--gl-blue));
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+
+  h2.clause-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.32rem;
+    font-weight: 750;
+    letter-spacing: -0.01em;
+    margin: 0 0 16px;
+    color: var(--gl-text);
+  }
+
+  h3.sub-title {
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin: 22px 0 10px;
+    color: var(--gl-text);
+  }
+
+  section.clause p, section.clause li {
+    color: var(--gl-text-soft);
+    font-size: 0.98rem;
+  }
+
+  section.clause ul, section.clause ol.plain {
+    margin: 10px 0 16px;
+    padding-left: 22px;
+  }
+
+  section.clause li { margin-bottom: 7px; }
+
+  strong { color: var(--gl-text); font-weight: 650; }
+
+  .table-wrap { overflow-x: auto; margin: 16px 0 20px; border: 1px solid var(--gl-border); border-radius: 10px; }
+
+  table.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    min-width: 560px;
+  }
+
+  table.data-table th {
+    background: var(--gl-code-bg);
+    text-align: left;
+    padding: 11px 14px;
+    font-weight: 700;
+    color: var(--gl-text);
+    border-bottom: 1px solid var(--gl-border);
+    white-space: nowrap;
+  }
+
+  table.data-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--gl-border);
+    color: var(--gl-text-soft);
+    vertical-align: top;
+  }
+
+  table.data-table tr:last-child td { border-bottom: none; }
+
+  .callout {
+    background: var(--gl-code-bg);
+    border: 1px solid var(--gl-border);
+    border-left: 4px solid var(--gl-teal);
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 0.92rem;
+    color: var(--gl-text-soft);
+    margin: 16px 0;
+  }
+
+  .callout.amber { border-left-color: var(--gl-amber); }
+  .callout strong { color: var(--gl-text); }
+
+  .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+  .badge {
+    background: var(--gl-code-bg);
+    border: 1px solid var(--gl-border);
+    color: var(--gl-text-soft);
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .contact-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin-top: 16px;
+  }
+
+  .contact-item {
+    background: var(--gl-code-bg);
+    border: 1px solid var(--gl-border);
+    border-radius: 12px;
+    padding: 16px;
+  }
+
+  .contact-item .label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gl-text-faint);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .contact-item .value { font-size: 0.95rem; color: var(--gl-text); font-weight: 600; word-break: break-word; }
+
+  footer.site-footer {
+    max-width: var(--gl-maxw);
+    margin: 0 auto;
+    padding: 0 24px 60px;
+    text-align: center;
+    color: var(--gl-text-faint);
+    font-size: 0.85rem;
+  }
+
+  .back-to-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    color: var(--gl-teal);
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
+
+  /* Mobile TOC toggle */
+  .toc-toggle { display: none; }
+
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; margin-top: -40px; }
+    .toc-card {
+      position: static;
+      max-height: none;
+    }
+    .toc-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--gl-text);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 0;
+    }
+    .toc-body { display: none; margin-top: 14px; }
+    .toc-card.open .toc-body { display: block; }
+    .toc-card.open .chev { transform: rotate(180deg); }
+    .chev { transition: transform 0.2s ease; color: var(--gl-text-faint); }
+    .doc { padding: 8px 22px 32px; }
+    .masthead { padding: 40px 18px 84px; }
+  }
+
+  @media (max-width: 520px) {
+    h1.doc-title { font-size: 1.7rem; }
+    .doc-sub { font-size: 0.95rem; }
+  }
+
+  ::selection { background: rgba(23,166,160,0.28); }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <svg class="pin-field" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="none" stroke="#EAF3FB" stroke-width="1.4" opacity="0.18">
+      <circle cx="160" cy="90" r="46"/>
+      <circle cx="1080" cy="140" r="70"/>
+      <circle cx="940" cy="380" r="30"/>
+      <circle cx="120" cy="400" r="20"/>
+    </g>
+    <g fill="#F472B6" opacity="0.35">
+      <circle cx="160" cy="90" r="3"/>
+      <circle cx="1080" cy="140" r="3"/>
+      <circle cx="940" cy="380" r="3"/>
+      <circle cx="120" cy="400" r="3"/>
+      <circle cx="600" cy="40" r="2.5"/>
+      <circle cx="700" cy="440" r="2.5"/>
+    </g>
+  </svg>
+
+  <div class="masthead-inner">
+    <div class="brand-row">
+      <span class="brand-mark-slot">
+        <img src="geolink-logo.png" alt="GeoLink logo" class="brand-mark" id="logoImg">
+        <svg class="brand-mark" id="logoFallback" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="pinGrad" x1="0" y1="0" x2="48" y2="48">
+              <stop offset="0" stop-color="#F472B6"/>
+              <stop offset="0.55" stop-color="#C084FC"/>
+              <stop offset="1" stop-color="#3B82F6"/>
+            </linearGradient>
+          </defs>
+          <circle cx="24" cy="24" r="21" fill="url(#pinGrad)"/>
+          <circle cx="24" cy="24" r="21" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+          <text x="24" y="30" text-anchor="middle" font-family="-apple-system, Segoe UI, Arial, sans-serif" font-size="17" font-weight="800" fill="#0A0A12">GL</text>
+        </svg>
+      </span>
+      <span class="brand-name">GeoLink</span>
+    </div>
+
+    <div class="eyebrow">Privacy &amp; Data Protection</div>
+    <h1 class="doc-title">Privacy Policy</h1>
+    <p class="doc-sub">This Privacy Policy explains what information GeoLink collects, why we collect it, how it is used and protected, and the choices and rights available to you as a user of our social media platform.</p>
+
+    <div class="meta-chips">
+      <span class="chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>
+        Last Updated: July 2026
+      </span>
+      <span class="chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-9-4z"/></svg>
+        Minimum Age: 13+
+      </span>
+      <span class="chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>
+        Available as a PWA
+      </span>
+      <span class="chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg>
+        Google Play &amp; Amazon Appstore Ready
+      </span>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc-card" id="tocCard" aria-label="Table of contents">
+    <button class="toc-toggle" id="tocToggle" aria-expanded="false" aria-controls="tocBody">
+      Contents
+      <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <h2 class="toc-heading-desktop">Contents</h2>
+    <div class="toc-body" id="tocBody">
+      <ol>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#information-we-collect">Information We Collect</a></li>
+        <li><a href="#why-we-collect">Why We Collect It</a></li>
+        <li><a href="#how-we-use">How We Use Information</a></li>
+        <li><a href="#legal-basis">Legal Basis for Processing</a></li>
+        <li><a href="#sharing">How Information Is Shared</a></li>
+        <li><a href="#third-party">Third-Party Services</a></li>
+        <li><a href="#cookies">Cookies &amp; Local Storage</a></li>
+        <li><a href="#retention">Data Retention</a></li>
+        <li><a href="#security">Data Security</a></li>
+        <li><a href="#children">Children's Privacy</a></li>
+        <li><a href="#rights">Your Rights &amp; Choices</a></li>
+        <li><a href="#deletion">Account &amp; Data Deletion</a></li>
+        <li><a href="#international">International Data Transfers</a></li>
+        <li><a href="#store-policies">App Store Disclosures</a></li>
+        <li><a href="#changes">Changes to This Policy</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="doc">
+    <div class="intro-block">
+      <p><strong>Effective Date / Last Updated: July 2026</strong></p>
+      <p>GeoLink ("GeoLink," "we," "us," or "our") is a social media platform accessible via web browser and as a Progressive Web App (PWA), operated by an independent developer based in India. This Privacy Policy applies to the GeoLink website at <a href="https://geo-link-one.vercel.app" target="_blank" rel="noopener">https://geo-link-one.vercel.app</a>, and to any related distributions of GeoLink through the Google Play Store, the Amazon Appstore, or any other platform that links to this policy (collectively, the "Service").</p>
+      <p>By creating an account or otherwise using GeoLink, you acknowledge that you have read and understood this Privacy Policy. If you do not agree with the practices described here, please do not use the Service.</p>
+    </div>
+
+    <section class="clause" id="introduction">
+      <h2 class="clause-title"><span class="clause-num">01</span>Introduction</h2>
+      <p>GeoLink is a social media platform that allows registered users to create profiles, publish posts containing text, photos, and videos, interact with other users' content through likes, comments, and shares, follow and be followed by other users, search for and view public profiles, and receive notifications relating to platform activity.</p>
+      <p>This Privacy Policy is designed to give you a clear, accurate, and complete understanding of GeoLink's data practices, in line with applicable data protection laws, including India's Digital Personal Data Protection Act, 2023 ("DPDP Act"), and, where applicable to users located in those regions, the EU General Data Protection Regulation ("GDPR") and the California Consumer Privacy Act ("CCPA"), as well as the developer policies of Google Play and the Amazon Appstore.</p>
+      <p>This document is intended to be an original policy drafted specifically for GeoLink and its feature set, and should not be construed as a substitute for independent legal advice tailored to your specific jurisdiction or business circumstances.</p>
+    </section>
+
+    <section class="clause" id="information-we-collect">
+      <h2 class="clause-title"><span class="clause-num">02</span>Information We Collect</h2>
+      <p>We collect information in three general categories: information you provide directly, information generated through your use of the Service, and information collected automatically by our systems.</p>
+
+      <h3 class="sub-title">2.1 Information You Provide Directly</h3>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Data Type</th><th>Collected When</th><th>Examples</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Account details</td><td>Registration and login</td><td>Name, username, email address, password (stored in hashed form)</td></tr>
+            <tr><td>Profile information</td><td>Profile creation or editing</td><td>Profile picture, bio, display preferences</td></tr>
+            <tr><td>User-generated content</td><td>Posting, commenting, uploading</td><td>Posts, photos, videos, comments, captions</td></tr>
+            <tr><td>Social interactions</td><td>Engaging with content or users</td><td>Likes, shares, follows/unfollows, followers and following lists</td></tr>
+            <tr><td>Communications</td><td>Contacting support</td><td>Emails or messages sent to our support address</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="sub-title">2.2 Information Collected Automatically</h3>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Data Type</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Device information</td><td>Device type, operating system, unique device identifiers, and hardware model</td></tr>
+            <tr><td>Browser information</td><td>Browser type and version, language settings, and screen resolution</td></tr>
+            <tr><td>IP address</td><td>Used for security, fraud prevention, and approximate location detection</td></tr>
+            <tr><td>Log data</td><td>Access times, pages viewed, crash reports, and referring URLs</td></tr>
+            <tr><td>Cookies and local storage</td><td>Small data files stored on your device to support login sessions and preferences</td></tr>
+            <tr><td>Analytics data</td><td>Aggregated usage patterns used to improve the Service, where analytics tools are enabled</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        <strong>Note:</strong> GeoLink does not require users to submit government identification, financial account details, or precise real-time GPS coordinates in order to use core social features. Any future feature requiring such data will be accompanied by an updated policy and, where legally required, additional consent.
+      </div>
+    </section>
+
+    <section class="clause" id="why-we-collect">
+      <h2 class="clause-title"><span class="clause-num">03</span>Why We Collect Information</h2>
+      <p>We collect the categories of information described above for the following purposes:</p>
+      <ul>
+        <li>To create and authenticate your GeoLink account and maintain your login session.</li>
+        <li>To enable core social features, including posting, commenting, liking, sharing, following, and searching for other users.</li>
+        <li>To personalize your experience, such as displaying relevant content and suggested profiles.</li>
+        <li>To send you notifications about activity relevant to your account (for example, new followers, comments, or likes).</li>
+        <li>To maintain the security, integrity, and stability of the Service, including detecting fraud, spam, and abuse.</li>
+        <li>To diagnose technical issues, prevent service disruptions, and improve performance.</li>
+        <li>To comply with legal obligations and enforce our Terms of Service.</li>
+        <li>To analyze aggregated usage trends in order to improve GeoLink's features and design.</li>
+      </ul>
+    </section>
+
+    <section class="clause" id="how-we-use">
+      <h2 class="clause-title"><span class="clause-num">04</span>How We Use Your Information</h2>
+      <p>GeoLink uses the information collected as follows:</p>
+      <h3 class="sub-title">4.1 Provision of the Service</h3>
+      <p>Your account details, profile information, and content are used to operate the core functionality of GeoLink, including displaying your profile to other users, publishing your posts, and enabling interactions such as comments and likes.</p>
+      <h3 class="sub-title">4.2 Communication</h3>
+      <p>We may use your email address to send account-related communications, including verification emails, password reset instructions, security alerts, and, where you have opted in, product updates.</p>
+      <h3 class="sub-title">4.3 Safety and Moderation</h3>
+      <p>We may review reported content, account activity, device, and log information to investigate violations of our Terms of Service, prevent impersonation, and protect users from harassment, spam, or abusive behavior.</p>
+      <h3 class="sub-title">4.4 Analytics and Improvement</h3>
+      <p>Where analytics tools are used, aggregated and, where possible, de-identified usage data helps us understand how features are used so that we can improve navigation, performance, and design.</p>
+      <p>We do not sell your personal information to third parties for their independent marketing purposes.</p>
+    </section>
+
+    <section class="clause" id="legal-basis">
+      <h2 class="clause-title"><span class="clause-num">05</span>Legal Basis for Processing</h2>
+      <p>Where applicable data protection law requires a legal basis for processing personal data, GeoLink relies on the following bases:</p>
+      <ul>
+        <li><strong>Consent</strong> — for example, when you voluntarily create an account, upload content, or agree to receive optional communications.</li>
+        <li><strong>Performance of a contract</strong> — processing necessary to provide the Service you have signed up for, such as maintaining your profile and enabling social features.</li>
+        <li><strong>Legitimate interests</strong> — such as securing the platform, preventing fraud, and improving the Service, provided these interests are not overridden by your rights.</li>
+        <li><strong>Legal obligation</strong> — where processing is necessary to comply with applicable law, regulation, or valid legal process.</li>
+      </ul>
+      <p>Users located in India are additionally protected under the Digital Personal Data Protection Act, 2023, which governs the processing of digital personal data by data fiduciaries such as GeoLink.</p>
+    </section>
+
+    <section class="clause" id="sharing">
+      <h2 class="clause-title"><span class="clause-num">06</span>How Information Is Shared</h2>
+      <p>GeoLink is a social platform, and certain information is inherently shared as part of using the Service:</p>
+      <ul>
+        <li><strong>Public profile information</strong> — your username, profile picture, bio, and public posts are visible to other users and, unless you restrict visibility through available settings, may be visible to the public.</li>
+        <li><strong>Social interactions</strong> — your comments, likes, shares, and follower/following relationships are visible to other users in accordance with the features of the platform.</li>
+        <li><strong>Service providers</strong> — we may share information with trusted infrastructure and hosting providers (for example, cloud hosting, storage, and analytics providers) strictly to operate and maintain the Service, under contractual confidentiality obligations.</li>
+        <li><strong>Legal and safety disclosures</strong> — we may disclose information where required by law, legal process, or governmental request, or where necessary to protect the rights, property, or safety of GeoLink, our users, or the public.</li>
+        <li><strong>Business transfers</strong> — if GeoLink is involved in a merger, acquisition, or asset sale, user information may be transferred as part of that transaction, subject to this Privacy Policy or a policy offering equivalent protections.</li>
+      </ul>
+      <p>We do not share your private account credentials or password with any third party.</p>
+    </section>
+
+    <section class="clause" id="third-party">
+      <h2 class="clause-title"><span class="clause-num">07</span>Third-Party Services</h2>
+      <p>GeoLink may rely on third-party infrastructure and service providers to operate reliably and securely, which may include:</p>
+      <ul>
+        <li>Cloud hosting and content storage providers, used to host the platform, images, and videos.</li>
+        <li>Analytics providers, used to understand aggregated usage patterns (where enabled).</li>
+        <li>Distribution platforms, including Google Play and the Amazon Appstore, which may apply their own data collection practices to the extent required for app distribution, licensing, and updates.</li>
+      </ul>
+      <p>These third parties process information only to the extent necessary to provide their services to GeoLink and are contractually or technically restricted from using your information for unrelated purposes. This Privacy Policy does not cover the independent privacy practices of third-party websites, platforms, or services that GeoLink may link to; we encourage you to review their respective privacy policies.</p>
+    </section>
+
+    <section class="clause" id="cookies">
+      <h2 class="clause-title"><span class="clause-num">08</span>Cookies &amp; Local Storage</h2>
+      <p>GeoLink, as a web-based platform and Progressive Web App, uses cookies and browser local storage to support essential functionality:</p>
+      <div class="badge-row">
+        <span class="badge">Session cookies</span>
+        <span class="badge">Authentication tokens</span>
+        <span class="badge">Preference storage</span>
+        <span class="badge">Performance analytics</span>
+      </div>
+      <ul>
+        <li><strong>Essential cookies/local storage</strong> — used to keep you logged in, remember your session, and maintain basic security controls.</li>
+        <li><strong>Preference storage</strong> — used to remember display settings, such as light or dark mode.</li>
+        <li><strong>Analytics cookies</strong> — where enabled, used to understand feature usage in an aggregated form.</li>
+      </ul>
+      <p>You can control or delete cookies and local storage through your browser settings at any time. Please note that disabling essential cookies or local storage may prevent GeoLink from functioning correctly, including staying logged in.</p>
+    </section>
+
+    <section class="clause" id="retention">
+      <h2 class="clause-title"><span class="clause-num">09</span>Data Retention</h2>
+      <p>We retain personal information for as long as your account remains active and for a reasonable period thereafter, as necessary to:</p>
+      <ul>
+        <li>Provide the Service and maintain accurate records of your account and content.</li>
+        <li>Comply with applicable legal, tax, accounting, or regulatory requirements.</li>
+        <li>Resolve disputes, enforce agreements, and prevent fraud or abuse.</li>
+      </ul>
+      <p>When you delete your account, we will delete or anonymize your personal information within a reasonable period, except where retention is required for legal compliance, fraud prevention, or the resolution of disputes. Content you have shared with other users (for example, comments left on another user's post) may remain visible if independently retained by that user's device or feed, consistent with the nature of social media publishing.</p>
+    </section>
+
+    <section class="clause" id="security">
+      <h2 class="clause-title"><span class="clause-num">10</span>Data Security</h2>
+      <p>We implement administrative, technical, and organizational safeguards designed to protect your information against unauthorized access, alteration, disclosure, or destruction, including:</p>
+      <ul>
+        <li>Encryption of data in transit using industry-standard protocols (such as HTTPS/TLS).</li>
+        <li>Secure storage of passwords using one-way cryptographic hashing.</li>
+        <li>Access controls limiting who may access user data internally.</li>
+        <li>Regular review of security practices as the platform evolves.</li>
+      </ul>
+      <div class="callout amber">
+        <strong>Important:</strong> No method of transmission over the internet or electronic storage is completely secure. While we strive to protect your personal information, we cannot guarantee its absolute security, and you share information with us at your own risk.
+      </div>
+    </section>
+
+    <section class="clause" id="children">
+      <h2 class="clause-title"><span class="clause-num">11</span>Children's Privacy</h2>
+      <p>GeoLink is intended for users who are <strong>13 years of age or older</strong>. We do not knowingly collect personal information from children under the age of 13. If you are a parent or guardian and believe that your child under 13 has provided us with personal information, please contact us at <a href="mailto:nimrahkhan1400@gmail.com">nimrahkhan1400@gmail.com</a>, and we will take reasonable steps to investigate and, where appropriate, delete such information from our systems.</p>
+      <p>Users between the ages of 13 and the age of majority in their jurisdiction should review this Privacy Policy together with a parent or guardian before using the Service.</p>
+    </section>
+
+    <section class="clause" id="rights">
+      <h2 class="clause-title"><span class="clause-num">12</span>Your Rights &amp; Choices</h2>
+      <p>Depending on your jurisdiction, you may have the following rights regarding your personal information:</p>
+      <ul>
+        <li><strong>Right to access</strong> — request a copy of the personal information we hold about you.</li>
+        <li><strong>Right to correction</strong> — request correction of inaccurate or incomplete information via your profile settings or by contacting us.</li>
+        <li><strong>Right to deletion/erasure</strong> — request deletion of your account and associated personal data, subject to certain legal exceptions.</li>
+        <li><strong>Right to withdraw consent</strong> — where processing is based on consent, withdraw that consent at any time.</li>
+        <li><strong>Right to restrict or object to processing</strong> — request that we limit certain uses of your information.</li>
+        <li><strong>Right to data portability</strong> — request your information in a structured, commonly used format, where applicable.</li>
+        <li><strong>Right to lodge a complaint</strong> — with a competent data protection authority in your jurisdiction, if you believe your rights have been violated.</li>
+      </ul>
+      <p>To exercise any of these rights, please contact us using the details in Section 17. We will respond to verified requests within a reasonable timeframe and in accordance with applicable law.</p>
+    </section>
+
+    <section class="clause" id="deletion">
+      <h2 class="clause-title"><span class="clause-num">13</span>Account &amp; Data Deletion</h2>
+      <p>You may delete your GeoLink account at any time through the account settings menu within the app, where available, or by emailing our support address with a verified deletion request from your registered email address.</p>
+      <p>Upon a valid deletion request, we will:</p>
+      <ul>
+        <li>Deactivate your public profile and remove it from search and public view.</li>
+        <li>Delete or irreversibly anonymize your personal information within our systems within a reasonable period, subject to legal retention obligations described in Section 9.</li>
+        <li>Remove your posts, photos, and videos from active platform display, except copies that may remain in routine backups for a limited period before being purged.</li>
+      </ul>
+      <p>Please note that content you posted which was reshared, commented on, or saved externally by other users prior to deletion may not be fully retrievable once shared, consistent with the nature of publicly posted social media content.</p>
+    </section>
+
+    <section class="clause" id="international">
+      <h2 class="clause-title"><span class="clause-num">14</span>International Data Transfers</h2>
+      <p>GeoLink is operated from India, and information collected may be stored or processed on servers located in India or other countries where our hosting and infrastructure providers operate. If you access GeoLink from outside India, your information may be transferred to, stored, and processed in a country that may have data protection laws different from those of your home jurisdiction.</p>
+      <p>Where such transfers occur, we take reasonable steps to ensure that your information is treated in a manner consistent with this Privacy Policy and applicable data protection requirements, including the use of reputable infrastructure providers and, where applicable, contractual safeguards.</p>
+    </section>
+
+    <section class="clause" id="store-policies">
+      <h2 class="clause-title"><span class="clause-num">15</span>App Store Disclosures</h2>
+      <p>This Privacy Policy is intended to satisfy the privacy disclosure requirements of app distribution platforms, including the Google Play Store and the Amazon Appstore, as well as use of GeoLink as a standalone Progressive Web App or website.</p>
+      <h3 class="sub-title">15.1 Google Play</h3>
+      <p>In accordance with Google Play's Data Safety requirements, GeoLink discloses the categories of data collected, the purposes of collection, and whether data is shared with third parties, as detailed in Sections 2, 3, 6, and 7 of this Policy.</p>
+      <h3 class="sub-title">15.2 Amazon Appstore</h3>
+      <p>In accordance with Amazon Appstore content and privacy guidelines, this Policy is made available at a publicly accessible URL and describes GeoLink's data collection, use, and security practices in plain language for review purposes.</p>
+      <h3 class="sub-title">15.3 Progressive Web App &amp; Website</h3>
+      <p>When accessed via a supported browser, GeoLink may prompt you to install it as a Progressive Web App (PWA). This Policy applies equally regardless of whether you access GeoLink through a browser tab, an installed PWA, or a packaged app distributed via an app store.</p>
+    </section>
+
+    <section class="clause" id="changes">
+      <h2 class="clause-title"><span class="clause-num">16</span>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices, features, legal requirements, or for other operational reasons. When we make material changes, we will update the "Last Updated" date at the top of this Policy and, where appropriate, provide additional notice through the Service (such as an in-app notification or email).</p>
+      <p>Your continued use of GeoLink after any changes to this Privacy Policy take effect constitutes your acceptance of the revised Policy. We encourage you to review this Policy periodically.</p>
+    </section>
+
+    <section class="clause" id="contact">
+      <h2 class="clause-title"><span class="clause-num">17</span>Contact Us</h2>
+      <p>If you have questions, concerns, or requests regarding this Privacy Policy or GeoLink's data practices, please contact us using the details below:</p>
+      <div class="contact-card">
+        <div class="contact-item">
+          <div class="label">Support Email</div>
+          <div class="value"><a href="mailto:nimrahkhan1400@gmail.com">nimrahkhan1400@gmail.com</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="label">Platform</div>
+          <div class="value"><a href="https://geo-link-one.vercel.app" target="_blank" rel="noopener">geo-link-one.vercel.app</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="label">Developer</div>
+          <div class="value">Independent Developer</div>
+        </div>
+        <div class="contact-item">
+          <div class="label">Country of Operation</div>
+          <div class="value">India</div>
+        </div>
+      </div>
+      <p style="margin-top:20px;">We aim to respond to all legitimate privacy inquiries within a reasonable timeframe, generally within 30 days.</p>
+      <a class="back-to-top" href="#introduction">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        Back to top
+      </a>
+    </section>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <p>© 2026 GeoLink. This Privacy Policy is an original document prepared specifically for the GeoLink platform.</p>
+</footer>
+
+<script>
+  var tocToggle = document.getElementById('tocToggle');
+  var tocCard = document.getElementById('tocCard');
+  if (tocToggle) {
+    tocToggle.addEventListener('click', function () {
+      var isOpen = tocCard.classList.toggle('open');
+      tocToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
+
+  var logoImg = document.getElementById('logoImg');
+  var logoFallback = document.getElementById('logoFallback');
+  if (logoImg && logoFallback) {
+    logoImg.addEventListener('error', function () {
+      logoImg.style.display = 'none';
+      logoFallback.style.display = 'block';
+    });
+  }
+</script>
+
+</body>
+</html>
