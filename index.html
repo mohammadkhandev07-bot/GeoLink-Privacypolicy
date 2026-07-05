@@ -46,9 +46,11 @@
 
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
+  html, body { max-width: 100%; overflow-x: hidden; }
 
   body {
     margin: 0;
+    width: 100%;
     background: var(--gl-bg);
     color: var(--gl-text);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -456,9 +458,19 @@
   }
 
   @media (max-width: 520px) {
-    h1.doc-title { font-size: 1.7rem; }
-    .doc-sub { font-size: 0.95rem; }
+    h1.doc-title { font-size: 1.65rem; max-width: 100%; }
+    .doc-sub { font-size: 0.92rem; }
+    .masthead { padding: 32px 16px 64px; }
+    .brand-row { margin-bottom: 28px; }
+    .brand-name { font-size: 1.1rem; }
+    .eyebrow { font-size: 0.7rem; }
+    .meta-chips { gap: 8px; }
+    .chip { font-size: 0.75rem; padding: 6px 11px; }
+    .layout { padding: 0 14px 60px; }
+    .doc { padding: 8px 16px 26px; }
   }
+
+  img, svg { max-width: 100%; }
 
   ::selection { background: rgba(23,166,160,0.28); }
 </style>
